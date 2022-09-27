@@ -1,1 +1,21 @@
-<p>recipe-item works!</p>
+<a
+  href="#"
+  class="list-group-item clearfix bg-a border border-dark border-1 border-opacity-10"
+  (click)="OnSelectRecipe()"
+>
+  <div class="float-start">
+    <h4 class="list-group-item ps-2 pt-2">{{ recipe.name }}</h4>
+    <p class="list-group-item ps-2 ps-2 fw-normal">
+      {{ recipe.description }}
+    </p>
+  </div>
+  <span class="float-end ms-auto p-2">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-fluid"
+      style="max-height: 65px"
+    />
+    <!-- sau src="{{ recipe.imagePath }}" -->
+  </span>
+</a>

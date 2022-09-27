@@ -4,16 +4,25 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="location" href="#"
+          <a
+            class="nav-link active"
+            aria-current="location"
+            href="#"
+            (click)="onSelect('recipe')"
             >Recipes</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Shopping List</a>
+          <a
+            class="nav-link active"
+            href="#"
+            (click)="onSelect('shopping-list')"
+            >Shopping List</a
+          >
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li class="dropdown" (click)="onClickShow()">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -23,9 +32,17 @@
             aria-expanded="false"
             >Manage</a
           >
-          <ul class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">Save Data</a></li>
-            <li><a href="#" class="dropdown-item">Fetch Data</a></li>
+          <ul
+            class="dropdown-menu overflow-hidden"
+            id="marginGo"
+            [class.show]="isOpen"
+          >
+            <li>
+              <a class="dropdown-item ps-5" href="#">Save Data</a>
+            </li>
+            <li>
+              <a class="dropdown-item ps-5" href="#">Fetch Data</a>
+            </li>
           </ul>
         </li>
       </ul>
