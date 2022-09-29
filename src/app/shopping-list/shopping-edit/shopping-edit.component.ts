@@ -19,7 +19,6 @@ export class ShoppingEditComponent implements OnInit {
   @ViewChild('amountInput') amountInputRef: ElementRef;
 
   constructor(private slService: ShoppingService) {}
-  logan: string;
 
   ngOnInit(): void {}
 

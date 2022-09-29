@@ -1,8 +1,13 @@
 <a
-  href="#"
+  style="cursor: pointer"
   class="list-group-item clearfix bg-a border border-dark border-1 border-opacity-10"
-  (click)="OnSelectRecipe()"
+  [routerLink]="[index]"
+  routerLinkActive="active"
 >
+  <!-- We bind the routerLink with square brackets
+  because we want to pass the array allows to configure
+  segment for segment of my path 
+  We'll use the relative path -->
   <div class="float-start">
     <h4 class="list-group-item ps-2 pt-2">{{ recipe.name }}</h4>
     <p class="list-group-item ps-2 ps-2 fw-normal">

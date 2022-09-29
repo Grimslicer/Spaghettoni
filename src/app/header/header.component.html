@@ -7,16 +7,16 @@
           <a
             class="nav-link active"
             aria-current="location"
-            href="#"
-            (click)="onSelect('recipe')"
+            routerLink="/recipes"
+            routerLinkActive="active"
             >Recipes</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" routerLinkActive="active">
           <a
             class="nav-link active"
-            href="#"
-            (click)="onSelect('shopping-list')"
+            routerLinkActive="active"
+            routerLink="/shopping-list"
             >Shopping List</a
           >
         </li>
@@ -25,11 +25,11 @@
         <li class="dropdown" (click)="isOpen = !isOpen">
           <a
             class="nav-link dropdown-toggle"
-            href="#"
             id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            style="cursor: pointer"
             >Manage</a
           >
           <ul
@@ -38,10 +38,14 @@
             [class.show]="isOpen"
           >
             <li>
-              <a class="dropdown-item ps-5" href="#">Save Data</a>
+              <a class="dropdown-item ps-5" style="cursor: pointer"
+                >Save Data</a
+              >
             </li>
             <li>
-              <a class="dropdown-item ps-5" href="#">Fetch Data</a>
+              <a class="dropdown-item ps-5" style="cursor: pointer"
+                >Fetch Data</a
+              >
             </li>
           </ul>
         </li>
