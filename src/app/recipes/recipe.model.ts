@@ -9,7 +9,7 @@ export class Recipe {
     // constructor is a built in function that every class has
     //  will be executed once you create a instance of this class
     this.name = name;
-    // this.name refers to the name of the propery on the class
+    // this.name refers to the name of the property on the class
     this.description = desc;
     this.imagePath = imagePath;
   }
