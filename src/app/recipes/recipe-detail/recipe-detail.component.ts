@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
 
@@ -15,7 +15,8 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
   // We inject the RecipeService
   // Then we add a method into the RecipeService
@@ -35,5 +36,14 @@ export class RecipeDetailComponent implements OnInit {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
     // Access recipeService, call the method from service
     // and pass on the ingredients of the recipe
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+    // This is the typical way
+    // for demo purposes down below there's the navigation based on id
+    // this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
+    // Let's say we move up one level '../' and then we want to add our ID again
+    // and then edit
   }
 }
